@@ -9,16 +9,10 @@ pipeline {
             }
         }
 
-        stage('Install Node.js') {
+        stage('Setup Node.js and Install dependencies') {
             steps {
                 sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
-                sh '. ~/.nvm/nvm.sh && nvm install 20'
-                sh '. ~/.nvm/nvm.sh && nvm use 20'
-            }
-        }
-        stage('Install dependencies') {
-            steps {
-                sh '. ~/.nvm/nvm.sh && nvm use 20 && npm install'
+                sh '. ~/.nvm/nvm.sh && nvm install 20 && nvm use 20 && npm install'
             }
         }
 
