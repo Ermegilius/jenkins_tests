@@ -9,15 +9,15 @@ pipeline {
             }
         }
 
-        stage('Install Node.js') {
+         stage('Install Node.js') {
             steps {
-                sh 'curl -sL https://deb.nodesource.com/setup_20.x | bash -'
-                sh 'apt-get install -y nodejs'
+                sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash'
+                sh '. ~/.nvm/nvm.sh && nvm install 20 && nvm use 20'
             }
         }
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                sh '. ~/.nvm/nvm.sh && nvm use 20 && npm install'
             }
         }
 
