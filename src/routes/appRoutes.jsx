@@ -7,6 +7,7 @@ import Details from "../pages/Details";
 import LoginPage from "../pages/LoginPage";
 import ProtectedRoute from "../components/ProtectedRoutes/ProtectedRoutes";
 import WelcomePage from "../pages/Welcome";
+import SnakeGame from "../pages/SnakeGame";
 export const router = createBrowserRouter(
     [
       {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter(
         children: [
           { path: "/", element: <LoginPage /> },
           { path: "/login", element: <LoginPage /> },
+          { path: "/snake", element: <SnakeGame /> },
           {
             path: "/welcome",
             element: (
