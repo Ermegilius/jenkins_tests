@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+
+ agent {
+        docker {
+            image 'node:14' // or choose the version you require
+        }
+    }
 
     stages {
         stage('Checkout') {
@@ -12,6 +17,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
+                sh 'node -v'
+                sh 'npm -v'
                 // Example: Add build commands here (e.g., for Node.js, Java, Python, etc.)
                 sh 'npm install'
                 // sh 'mvn clean package'  # For Java projects
