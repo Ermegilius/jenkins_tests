@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Building the project...'
                 // Example: Add build commands here (e.g., for Node.js, Java, Python, etc.)
-                bash npm install  
+                sh npm install  
                  
                 // sh 'mvn clean package'  # For Java projects
             }
