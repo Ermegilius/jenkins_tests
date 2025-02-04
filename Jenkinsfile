@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+tools {nodejs "node"}
     stages {
         stage('Checkout') {
             steps {
@@ -12,10 +12,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'node -v'
-                sh 'npm -v'
+                sh 'git clone https://github.com/Ermegilius/jenkins_tests.git'
+                sh 'cd jenkins_tests'
                 // Example: Add build commands here (e.g., for Node.js, Java, Python, etc.)
                 sh 'npm install'
+                sh 'npm run dev'
                 // sh 'mvn clean package'  # For Java projects
             }
         }
