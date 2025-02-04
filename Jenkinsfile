@@ -1,10 +1,5 @@
 pipeline {
-
- agent {
-        docker {
-            image 'node:14' // or choose the version you require
-        }
-    }
+    agent any
 
     stages {
         stage('Checkout') {
