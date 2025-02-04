@@ -7,7 +7,7 @@ This project is a full-stack React application created as part of a school proje
 -	<span class="highlight">Employee Management:</span>
     - 	View a list of all employees.
 	-	Add new employees with key details.
-	-	Edit existing employee information.
+	-	Edit exisasdasdasting employee information.
 	-	Promote employees with role-based logic.
 - 	<span class="higasdasdahlight">Mock User Login System:</span>
 	-	A simple login system that authenticates users based on credentials stored in the backend mock server.
