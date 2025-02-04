@@ -20,8 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                //sh '. ~/.nvm/nvm.sh && nvm use 20 && npm install'  // Install dependencies
-                //sh '. ~/.nvm/nvm.sh && nvm use 20 && npm run build'  // Build the project
+                sh npm i
             }
         }
 
