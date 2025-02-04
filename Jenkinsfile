@@ -12,9 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Example: Add build commands here (e.g., for Node.js, Java, Python, etc.)
-                // sh 'npm install'  # For Node.js projects
-                // sh 'mvn clean package'  # For Java projects
+                sh 'npm install'  // Install dependencies
+                sh 'npm run build'  // Build the project
             }
         }
 
