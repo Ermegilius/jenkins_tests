@@ -2,35 +2,36 @@ pipeline {
     agent any
 
     stages {
-        stages('Checkout') {
+        stage('Checkout') {
             steps {
                 echo 'Cloning repository...'
                 checkout scm
             }
         }
 
-        stages('Build') {
+        stage('Build') {
             steps {
                 echo 'Building the project...'
-
-                sh 'npm install'
+                // Example: Add build commands here (e.g., for Node.js, Java, Python, etc.)
+                // sh 'npm install'  # For Node.js projects
+                // sh 'mvn clean package'  # For Java projects
             }
         }
 
-        stages('Test') {
+        stage('Test') {
             steps {
                 echo 'Running tests...'
-            // Example: Add test commands here
-            // sh 'npm test'
-            // sh 'pytest'
+                // Example: Add test commands here
+                // sh 'npm test'
+                // sh 'pytest'
             }
         }
 
-        stages('Deploy') {
+        stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-            // Example: Add deployment commands here
-            // sh 'scp target/app.jar user@server:/deploy/path/'
+                // Example: Add deployment commands here
+                // sh 'scp target/app.jar user@server:/deploy/path/'
             }
         }
     }
