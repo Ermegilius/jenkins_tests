@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:14'  // Use a Node.js Docker image
-            args '-u root:root'  // Run as root to avoid permission issues
-        }
-    }
+    agent any
 
     stages {
         stage('Checkout') {
@@ -17,8 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'npm install'  // Install dependencies
-                sh 'npm run build'  // Build the project
+                //sh 'npm install'  // Install dependencies
+                //sh 'npm run build'  // Build the project
             }
         }
 
